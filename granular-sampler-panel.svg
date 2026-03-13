@@ -1,0 +1,362 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 820" font-family="'Courier New', monospace">
+  <defs>
+    <style>
+      .panel { fill: #f0ece4; stroke: #bbb; stroke-width: 2; rx: 4; }
+      .jack { fill: #2a2a2a; stroke: #888; stroke-width: 1.5; }
+      .jack-ring { fill: none; stroke: #c0b090; stroke-width: 2.5; }
+      .knob { fill: #e8e4dc; stroke: #ccc; stroke-width: 1.5; }
+      .knob-cap { fill: linear; }
+      .knob-line { stroke: #333; stroke-width: 2; stroke-linecap: round; }
+      .btn { fill: #e0dcd4; stroke: #bbb; stroke-width: 1.5; }
+      .led-off { fill: #d0ccc4; stroke: #aaa; stroke-width: 1; }
+      .label { fill: #333; font-size: 9px; text-anchor: middle; }
+      .label-hw { fill: #555; font-size: 8.5px; text-anchor: middle; font-weight: normal; }
+      .label-fn { fill: #c44; font-size: 9px; text-anchor: middle; font-weight: bold; }
+      .label-fn2 { fill: #2a8a7a; font-size: 9px; text-anchor: middle; font-weight: bold; }
+      .label-unused { fill: #aaa; font-size: 8px; text-anchor: middle; font-style: italic; }
+      .title { fill: #333; font-size: 14px; text-anchor: middle; font-weight: bold; letter-spacing: 3px; }
+      .section { fill: #666; font-size: 8px; text-anchor: middle; letter-spacing: 1px; }
+      .note { fill: #888; font-size: 9px; text-anchor: start; }
+      .note-c { fill: #888; font-size: 9px; text-anchor: middle; }
+      .flow { fill: #444; font-size: 10px; text-anchor: middle; }
+      .legend-dot { stroke: #888; stroke-width: 1; }
+      .screw { fill: #c0b8a8; stroke: #999; stroke-width: 1; }
+    </style>
+    <!-- Knob gradient -->
+    <radialGradient id="knobGrad" cx="40%" cy="35%">
+      <stop offset="0%" stop-color="#f5f2ec"/>
+      <stop offset="60%" stop-color="#e0dcd4"/>
+      <stop offset="100%" stop-color="#ccc8c0"/>
+    </radialGradient>
+    <radialGradient id="knobCenter" cx="45%" cy="40%">
+      <stop offset="0%" stop-color="#d4c8a0"/>
+      <stop offset="100%" stop-color="#a09070"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="980" height="820" fill="#1a1a2e" rx="8"/>
+
+  <!-- Overall title -->
+  <text x="490" y="28" fill="#ddd" font-size="15" text-anchor="middle" font-weight="bold" letter-spacing="2">GRANULAR SAMPLER — BELA SALT + SALT+</text>
+
+  <!-- ════════════ SALT PANEL ════════════ -->
+  <rect x="40" y="45" width="420" height="680" class="panel"/>
+
+  <!-- Screws -->
+  <circle cx="60" cy="65" r="7" class="screw"/><circle cx="60" cy="65" r="2" fill="#999"/>
+  <circle cx="440" cy="65" r="7" class="screw"/><circle cx="440" cy="65" r="2" fill="#999"/>
+  <circle cx="60" cy="705" r="7" class="screw"/><circle cx="60" cy="705" r="2" fill="#999"/>
+  <circle cx="440" cy="705" r="7" class="screw"/><circle cx="440" cy="705" r="2" fill="#999"/>
+
+  <text x="250" y="90" class="title">SALT</text>
+
+  <!-- ── KNOBS (2x2) ── -->
+  <!-- CV1 knob - top left -->
+  <circle cx="160" cy="150" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="160" cy="150" r="14" fill="url(#knobCenter)"/>
+  <line x1="160" y1="150" x2="145" y2="125" class="knob-line"/>
+  <text x="160" y="195" class="label-fn">POSITION</text>
+  <text x="160" y="205" class="label-hw">buf scan</text>
+  <text x="160" y="118" class="label-hw">CV1</text>
+
+  <!-- CV2 knob - top right -->
+  <circle cx="340" cy="150" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="340" cy="150" r="14" fill="url(#knobCenter)"/>
+  <line x1="340" y1="150" x2="325" y2="125" class="knob-line"/>
+  <text x="340" y="195" class="label-fn">SIZE</text>
+  <text x="340" y="205" class="label-hw">10–500ms</text>
+  <text x="340" y="118" class="label-hw">CV2</text>
+
+  <!-- CV3 knob - bottom left -->
+  <circle cx="160" cy="265" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="160" cy="265" r="14" fill="url(#knobCenter)"/>
+  <line x1="160" y1="265" x2="145" y2="240" class="knob-line"/>
+  <text x="160" y="310" class="label-fn">DENSITY</text>
+  <text x="160" y="320" class="label-hw">0.5–60 Hz</text>
+  <text x="160" y="233" class="label-hw">CV3</text>
+
+  <!-- CV4 knob - bottom right -->
+  <circle cx="340" cy="265" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="340" cy="265" r="14" fill="url(#knobCenter)"/>
+  <line x1="340" y1="265" x2="355" y2="240" class="knob-line"/>
+  <text x="340" y="310" class="label-fn">PITCH</text>
+  <text x="340" y="320" class="label-hw">±2 oct</text>
+  <text x="340" y="233" class="label-hw">CV4</text>
+
+  <!-- ── BUTTONS + LEDs ── -->
+  <circle cx="195" cy="360" r="10" class="btn"/>
+  <circle cx="195" cy="342" r="5" class="led-off"/>
+  <text x="195" y="385" class="label-fn">REC</text>
+  <text x="195" y="395" class="label-hw">toggle</text>
+  <text x="195" y="335" class="label-hw">LED1</text>
+
+  <circle cx="310" cy="360" r="10" class="btn"/>
+  <circle cx="310" cy="342" r="5" class="led-off"/>
+  <text x="310" y="385" class="label-fn">FREEZE</text>
+  <text x="310" y="395" class="label-hw">toggle</text>
+  <text x="310" y="335" class="label-hw">LED2</text>
+
+  <!-- ── JACK ROW 1: Inputs ── -->
+  <!-- T1 IN -->
+  <circle cx="80" cy="435" r="9" class="jack"/>
+  <circle cx="80" cy="435" r="13" class="jack-ring"/>
+  <text x="80" cy="460" y="460" class="label-hw">T1</text>
+  <text x="80" y="413" class="label-fn">REC GATE</text>
+
+  <!-- T2 IN -->
+  <circle cx="130" cy="435" r="9" class="jack"/>
+  <circle cx="130" cy="435" r="13" class="jack-ring"/>
+  <text x="130" y="460" class="label-hw">T2</text>
+  <text x="130" y="413" class="label-unused">---</text>
+
+  <!-- CV1 IN -->
+  <circle cx="210" cy="435" r="9" class="jack"/>
+  <circle cx="210" cy="435" r="13" class="jack-ring"/>
+  <text x="210" y="460" class="label-hw">CV1</text>
+  <text x="210" y="413" class="label-fn">POS cv</text>
+
+  <!-- CV2 IN -->
+  <circle cx="290" cy="435" r="9" class="jack"/>
+  <circle cx="290" cy="435" r="13" class="jack-ring"/>
+  <text x="290" y="460" class="label-hw">CV2</text>
+  <text x="290" y="413" class="label-fn">SIZE cv</text>
+
+  <!-- Audio IN -->
+  <circle cx="400" cy="435" r="9" class="jack"/>
+  <circle cx="400" cy="435" r="13" class="jack-ring"/>
+  <text x="400" y="460" class="label-hw">AUD</text>
+  <text x="400" y="413" class="label-fn">rec src</text>
+
+  <text x="250" y="478" class="section">I N</text>
+
+  <!-- ── JACK ROW 2: T out + CV3/4 in + Audio out ── -->
+  <!-- T1 OUT -->
+  <circle cx="80" cy="510" r="9" class="jack"/>
+  <circle cx="80" cy="510" r="13" class="jack-ring"/>
+  <text x="80" y="535" class="label-hw">T1</text>
+  <text x="80" y="498" class="label-unused">---</text>
+
+  <!-- T2 OUT -->
+  <circle cx="130" cy="510" r="9" class="jack"/>
+  <circle cx="130" cy="510" r="13" class="jack-ring"/>
+  <text x="130" y="535" class="label-hw">T2</text>
+  <text x="130" y="498" class="label-unused">---</text>
+
+  <!-- CV3 IN -->
+  <circle cx="210" cy="510" r="9" class="jack"/>
+  <circle cx="210" cy="510" r="13" class="jack-ring"/>
+  <text x="210" y="535" class="label-hw">CV3</text>
+  <text x="210" y="498" class="label-fn">DENS cv</text>
+
+  <!-- CV4 IN -->
+  <circle cx="290" cy="510" r="9" class="jack"/>
+  <circle cx="290" cy="510" r="13" class="jack-ring"/>
+  <text x="290" y="535" class="label-hw">CV4</text>
+  <text x="290" y="498" class="label-fn">PITCH cv</text>
+
+  <!-- Audio OUT -->
+  <circle cx="400" cy="510" r="9" class="jack"/>
+  <circle cx="400" cy="510" r="13" class="jack-ring"/>
+  <text x="400" y="535" class="label-hw">AUDIO</text>
+  <text x="400" y="498" class="label-fn2">grain L</text>
+
+  <text x="105" y="548" class="section">O U T</text>
+  <text x="250" y="548" class="section">I N</text>
+
+  <!-- ── JACK ROW 3: USB + CV1/2 out + Audio out ── -->
+  <!-- USB-B -->
+  <rect x="60" y="575" width="36" height="22" rx="2" fill="#333" stroke="#666" stroke-width="1.5"/>
+  <rect x="68" y="580" width="20" height="12" rx="1" fill="#222" stroke="#555" stroke-width="1"/>
+  <text x="78" y="610" class="label-hw">USB-B</text>
+  <text x="78" y="620" class="label-hw">laptop</text>
+
+  <!-- CV1 OUT -->
+  <circle cx="210" cy="586" r="9" class="jack"/>
+  <circle cx="210" cy="586" r="13" class="jack-ring"/>
+  <text x="210" y="611" class="label-hw">CV1</text>
+  <text x="210" y="574" class="label-unused">out</text>
+
+  <!-- CV2 OUT -->
+  <circle cx="290" cy="586" r="9" class="jack"/>
+  <circle cx="290" cy="586" r="13" class="jack-ring"/>
+  <text x="290" y="611" class="label-hw">CV2</text>
+  <text x="290" y="574" class="label-unused">out</text>
+
+  <!-- Audio OUT R -->
+  <circle cx="400" cy="586" r="9" class="jack"/>
+  <circle cx="400" cy="586" r="13" class="jack-ring"/>
+  <text x="400" y="611" class="label-hw">AUD</text>
+  <text x="400" y="574" class="label-fn2">grain R</text>
+
+  <text x="250" y="624" class="section">O U T</text>
+
+  <!-- ── JACK ROW 4: CV3/4 out ── -->
+  <circle cx="210" cy="650" r="9" class="jack"/>
+  <circle cx="210" cy="650" r="13" class="jack-ring"/>
+  <text x="210" y="675" class="label-hw">CV3</text>
+  <text x="210" y="638" class="label-unused">out</text>
+
+  <circle cx="290" cy="650" r="9" class="jack"/>
+  <circle cx="290" cy="650" r="13" class="jack-ring"/>
+  <text x="290" y="675" class="label-hw">CV4</text>
+  <text x="290" y="638" class="label-unused">out</text>
+
+  <text x="250" y="700" class="label-hw" style="font-size:8px; letter-spacing:1px;">BELA &amp; REBELTECHNOLOGY</text>
+
+  <!-- ════════════ SALT+ PANEL ════════════ -->
+  <rect x="510" y="45" width="420" height="680" class="panel"/>
+
+  <!-- Screws -->
+  <circle cx="530" cy="65" r="7" class="screw"/><circle cx="530" cy="65" r="2" fill="#999"/>
+  <circle cx="910" cy="65" r="7" class="screw"/><circle cx="910" cy="65" r="2" fill="#999"/>
+  <circle cx="530" cy="705" r="7" class="screw"/><circle cx="530" cy="705" r="2" fill="#999"/>
+  <circle cx="910" cy="705" r="7" class="screw"/><circle cx="910" cy="705" r="2" fill="#999"/>
+
+  <text x="720" y="90" class="title">SALT +</text>
+
+  <!-- ── KNOBS (2x2) ── -->
+  <!-- CV5 knob -->
+  <circle cx="630" cy="150" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="630" cy="150" r="14" fill="url(#knobCenter)"/>
+  <line x1="630" y1="150" x2="615" y2="125" class="knob-line"/>
+  <text x="630" y="195" class="label-fn2">SPRAY</text>
+  <text x="630" y="205" class="label-hw">pos random</text>
+  <text x="630" y="118" class="label-hw">CV5</text>
+
+  <!-- CV6 knob -->
+  <circle cx="810" cy="150" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="810" cy="150" r="14" fill="url(#knobCenter)"/>
+  <line x1="810" y1="150" x2="795" y2="125" class="knob-line"/>
+  <text x="810" y="195" class="label-fn2">SPREAD</text>
+  <text x="810" y="205" class="label-hw">stereo width</text>
+  <text x="810" y="118" class="label-hw">CV6</text>
+
+  <!-- CV7 knob -->
+  <circle cx="630" cy="265" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="630" cy="265" r="14" fill="url(#knobCenter)"/>
+  <line x1="630" y1="265" x2="615" y2="240" class="knob-line"/>
+  <text x="630" y="310" class="label-fn2">SHAPE</text>
+  <text x="630" y="320" class="label-hw">env skew</text>
+  <text x="630" y="233" class="label-hw">CV7</text>
+
+  <!-- CV8 knob -->
+  <circle cx="810" cy="265" r="32" fill="url(#knobGrad)" stroke="#bbb" stroke-width="1.5"/>
+  <circle cx="810" cy="265" r="14" fill="url(#knobCenter)"/>
+  <line x1="810" y1="265" x2="825" y2="240" class="knob-line"/>
+  <text x="810" y="310" class="label-fn2">DRY/WET</text>
+  <text x="810" y="320" class="label-hw">mix</text>
+  <text x="810" y="233" class="label-hw">CV8</text>
+
+  <!-- ── BUTTONS + LEDs ── -->
+  <circle cx="665" cy="360" r="10" class="btn"/>
+  <circle cx="665" cy="342" r="5" class="led-off"/>
+  <text x="665" y="385" class="label-hw">in level</text>
+  <text x="665" y="335" class="label-hw">LED3</text>
+
+  <circle cx="780" cy="360" r="10" class="btn"/>
+  <circle cx="780" cy="342" r="5" class="led-off"/>
+  <text x="780" y="385" class="label-hw">out level</text>
+  <text x="780" y="335" class="label-hw">LED4</text>
+
+  <!-- ── JACK ROW 1: CV5/6 in + T3/4 in ── -->
+  <circle cx="580" cy="435" r="9" class="jack"/>
+  <circle cx="580" cy="435" r="13" class="jack-ring"/>
+  <text x="580" y="460" class="label-hw">CV5</text>
+  <text x="580" y="413" class="label-fn2">SPRAY cv</text>
+
+  <circle cx="660" cy="435" r="9" class="jack"/>
+  <circle cx="660" cy="435" r="13" class="jack-ring"/>
+  <text x="660" y="460" class="label-hw">CV6</text>
+  <text x="660" y="413" class="label-fn2">SPRD cv</text>
+
+  <circle cx="790" cy="435" r="9" class="jack"/>
+  <circle cx="790" cy="435" r="13" class="jack-ring"/>
+  <text x="790" y="460" class="label-hw">T3</text>
+  <text x="790" y="413" class="label-unused">---</text>
+
+  <circle cx="870" cy="435" r="9" class="jack"/>
+  <circle cx="870" cy="435" r="13" class="jack-ring"/>
+  <text x="870" y="460" class="label-hw">T4</text>
+  <text x="870" y="413" class="label-unused">---</text>
+
+  <text x="720" y="478" class="section">I N</text>
+
+  <!-- ── JACK ROW 2: CV7/8 in + T3/4 out ── -->
+  <circle cx="580" cy="510" r="9" class="jack"/>
+  <circle cx="580" cy="510" r="13" class="jack-ring"/>
+  <text x="580" y="535" class="label-hw">CV7</text>
+  <text x="580" y="498" class="label-fn2">SHAPE cv</text>
+
+  <circle cx="660" cy="510" r="9" class="jack"/>
+  <circle cx="660" cy="510" r="13" class="jack-ring"/>
+  <text x="660" y="535" class="label-hw">CV8</text>
+  <text x="660" y="498" class="label-fn2">D/WET cv</text>
+
+  <circle cx="790" cy="510" r="9" class="jack"/>
+  <circle cx="790" cy="510" r="13" class="jack-ring"/>
+  <text x="790" y="535" class="label-hw">T3</text>
+  <text x="790" y="498" class="label-unused">---</text>
+
+  <circle cx="870" cy="510" r="9" class="jack"/>
+  <circle cx="870" cy="510" r="13" class="jack-ring"/>
+  <text x="870" y="535" class="label-hw">T4</text>
+  <text x="870" y="498" class="label-unused">---</text>
+
+  <text x="620" y="548" class="section">I N</text>
+  <text x="830" y="548" class="section">O U T</text>
+
+  <!-- ── JACK ROW 3: CV5/6 out + USB-A ── -->
+  <circle cx="580" cy="586" r="9" class="jack"/>
+  <circle cx="580" cy="586" r="13" class="jack-ring"/>
+  <text x="580" y="611" class="label-hw">CV5</text>
+  <text x="580" y="574" class="label-unused">out</text>
+
+  <circle cx="660" cy="586" r="9" class="jack"/>
+  <circle cx="660" cy="586" r="13" class="jack-ring"/>
+  <text x="660" y="611" class="label-hw">CV6</text>
+  <text x="660" y="574" class="label-unused">out</text>
+
+  <!-- USB-A host -->
+  <rect x="830" y="575" width="42" height="22" rx="2" fill="#333" stroke="#666" stroke-width="1.5"/>
+  <rect x="836" y="580" width="30" height="12" rx="1" fill="#ddd" stroke="#aaa" stroke-width="1"/>
+  <text x="851" y="610" class="label-hw">USB-A</text>
+  <text x="851" y="620" class="label-hw">MIDI host</text>
+
+  <text x="620" y="624" class="section">O U T</text>
+
+  <!-- ── JACK ROW 4: CV7/8 out ── -->
+  <circle cx="580" cy="650" r="9" class="jack"/>
+  <circle cx="580" cy="650" r="13" class="jack-ring"/>
+  <text x="580" y="675" class="label-hw">CV7</text>
+  <text x="580" y="638" class="label-unused">out</text>
+
+  <circle cx="660" cy="650" r="9" class="jack"/>
+  <circle cx="660" cy="650" r="13" class="jack-ring"/>
+  <text x="660" y="675" class="label-hw">CV8</text>
+  <text x="660" y="638" class="label-unused">out</text>
+
+  <!-- ════════════ LEGEND ════════════ -->
+  <rect x="40" y="745" width="890" height="65" rx="6" fill="#151525" stroke="#333" stroke-width="1"/>
+
+  <text x="490" y="765" class="flow" font-weight="bold">Signal Flow</text>
+  <text x="490" y="780" class="flow">Audio In L ──► Record Buffer (10s) ──► Grain Cloud (32 voices) ──► Dry/Wet ──► Stereo Out</text>
+
+  <!-- LED legend -->
+  <circle cx="105" cy="800" r="5" fill="#cc3333" class="legend-dot"/>
+  <text x="120" y="804" class="note">LED1: RED=rec</text>
+
+  <circle cx="225" cy="800" r="5" fill="#ccaa33" class="legend-dot"/>
+  <text x="240" y="804" class="note">YELLOW=frozen</text>
+
+  <circle cx="370" cy="800" r="5" fill="#cc3333" class="legend-dot"/>
+  <text x="385" y="804" class="note">LED2: grain flash</text>
+
+  <circle cx="520" cy="800" r="5" fill="#cc3333" class="legend-dot"/>
+  <text x="535" y="804" class="note">LED3: in level</text>
+
+  <circle cx="650" cy="800" r="5" fill="#cc3333" class="legend-dot"/>
+  <text x="665" y="804" class="note">LED4: out level</text>
+
+  <text x="830" y="804" class="note" style="fill:#666;">--- = unused</text>
+</svg>
