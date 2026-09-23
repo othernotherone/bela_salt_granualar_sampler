@@ -6,7 +6,7 @@ Records audio into a 10-second circular buffer, then spawns up to 32 simultaneou
 
 ## Panel Layout
 
-![Panel Diagram](granular-sampler-panel.svg)
+![Panel Diagram](better_image.png)
 
 ### Knobs (offset pots — set base value for each parameter)
 
